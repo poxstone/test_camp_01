@@ -1,76 +1,73 @@
+
 <html>
   <head>
-    <title></title>
-    <meta content="">
-    <style></style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Landing page</title>
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" sizes="any"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
+    <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
-    <div class="warpper">
-      
-      <header>
-        <div class="">
-          <img src="./imgs/back-to-the-future.png" alt="">
-        </div>
-        <div class="banner">
-          <img src="./imgs/banner.jpg" alt="">
-          <h2>UN AUTO ÚNICO COMO TÚ</h2>
-        </div>
-      </header>
-
-      <main>
-        <h1>AGENDA TU PRUEBA DE MANEJO Y DESCUBRE CÓMO
-          <br>
-          UN HÉROE SE VE COMO UN HÉROE
-        </h1>
-        <form action="">
-          <div class="form-input">
-            <label for="">Nombre*</label>
-            <input type="text">
+    <div class="app" id="app" v-bind:class="{&quot;is-sending&quot;:isSending, &quot;validate-status&quot;:validateStatus}">
+      <div class="warpper">
+        <header id="HEADER">
+          <div class="head-icon"><img src="./imgs/back-to-the-future.png" alt=""/></div>
+          <div class="head-title">
+            <h2>UN AUTO ÚNICO COMO TÚ</h2>
           </div>
-          <div class="form-input">
-            <label for="">Apellido*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Cédula*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Correo Electrónico*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Teléfono*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Modelo*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Ciudad*</label>
-            <input type="text">
-          </div>
-          <div class="form-input">
-            <label for="">Concesionario**</label>
-            <input type="text">
-          </div>
-          <div class="send">
-            <button type="button">ENVIAR</button>
-          </div>
-          
-          <div class="message">
-            <p class="note">*Campos obligatorios</p>
-            <p>Yo, manifiesto que acepto y autorizo por medio de la presente al concesionario y a su matriz, filiales, subsidiarias, controladas, y vinculadas, para que almacenen (en servidores dentro y fuera del país), empleen, utilicen y verifiquen datos personales suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes financieros para la adquisición de productos, respetando la privacidad y confidencialidad establecida por las leyes Colombianas, como la ley 1266 de 2008 y la 1581 de 2012, su reglamentación y demás normas que las modifiquen. Certifico que la información suministrada es clara, suficiente y veraz.</p>
-            <p>Más información sobre nuestra Política de Privacidad en el siguiente link <a href="">Política de Privacidad de la información</a></p>
-          </div>
-        </form>
-      </main>
-
-      <footer>
-          ™ + © 2019 Todos los derechos reservados.
-      </footer>
-      
+        </header>
+        <main id="MAIN">
+          <h1 class="main-title">AGENDA TU PRUEBA DE MANEJO Y DESCUBRE CÓMO<br/>UN HÉROE SE VE COMO UN HÉROE</h1>
+          <form id="DATA" action="/" v-on:submit="send">
+            <div class="form-input">
+              <label for="">Nombre*</label>
+              <input type="text" v-model="name"/>
+            </div>
+            <div class="form-input">
+              <label for="">Apellido*</label>
+              <input type="text" v-model="lastName"/>
+            </div>
+            <div class="form-input">
+              <label for="">Cédula*</label>
+              <input type="text" v-model="idNumber"/>
+            </div>
+            <div class="form-input">
+              <label for="">Correo Electrónico*</label>
+              <input type="text" v-model="email"/>
+            </div>
+            <div class="form-input">
+              <label for="">Teléfono*</label>
+              <input type="text" v-model="phone"/>
+            </div>
+            <div class="form-input">
+              <label for="">Modelo*</label>
+              <input type="text" v-model="carModel"/>
+            </div>
+            <div class="form-input">
+              <label for="">Ciudad*</label>
+              <input type="text" v-model="city"/>
+            </div>
+            <div class="form-input">
+              <label for="">Concesionario**</label>
+              <input type="text" v-model="concessionaire"/>
+            </div>
+            <div class="form-send">
+              <button type="submit">ENVIAR</button>
+            </div>
+            <div class="form-annotation">
+              <p class="note-cite">*Campos obligatorios</p>
+              <p>Yo, manifiesto que acepto y autorizo por medio de la presente al concesionario y a su matriz, filiales, subsidiarias, controladas, y vinculadas, para que almacenen (en servidores dentro y fuera del país), empleen, utilicen y verifiquen datos personales suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes financieros para la adquisición de productos, respetando la privacidad y confidencialidad establecida por las leyes Colombianas, como la ley 1266 de 2008 y la 1581 de 2012, su reglamentación y demás normas que las modifiquen. Certifico que la información suministrada es clara, suficiente y veraz.</p>
+              <p>Más información sobre nuestra Política de Privacidad en el siguiente link<a href="">Política de Privacidad de la información</a></p>
+            </div>
+          </form>
+        </main>
+        <footer id="FOOTER"> ™ + © 2019 Todos los derechos reservados.</footer>
+      </div>
     </div>
+    <script src="./js/scripts.js"></script>
   </body>
 </html>

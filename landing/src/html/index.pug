@@ -1,0 +1,65 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Landing page
+    
+    link(rel='icon', type='image/svg+xml', href='./img/favicon.svg', sizes='any')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', rel='stylesheet')
+    link(href='https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='./css/style.css')
+
+    script(src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js')
+    
+  body
+    #app.app(v-bind:class='{"is-sending":isSending, "validate-status":validateStatus}')
+      .warpper
+        header#HEADER
+          .head-icon
+            img(src='./imgs/back-to-the-future.png', alt='')
+          .head-title
+            h2 UN AUTO ÚNICO COMO TÚ
+        main#MAIN
+          h1.main-title
+            | AGENDA TU PRUEBA DE MANEJO Y DESCUBRE CÓMO
+            br
+            | UN HÉROE SE VE COMO UN HÉROE
+          form#DATA(action='/', v-on:submit='send')
+            .form-input
+              label(for='') Nombre*
+              input(type='text', v-model='name')
+            .form-input
+              label(for='') Apellido*
+              input(type='text', v-model='lastName')
+            .form-input
+              label(for='') Cédula*
+              input(type='text', v-model='idNumber')
+            .form-input
+              label(for='') Correo Electrónico*
+              input(type='text', v-model='email')
+            .form-input
+              label(for='') Teléfono*
+              input(type='text', v-model='phone')
+            .form-input
+              label(for='') Modelo*
+              input(type='text', v-model='carModel')
+            .form-input
+              label(for='') Ciudad*
+              input(type='text', v-model='city')
+            .form-input
+              label(for='') Concesionario**
+              input(type='text', v-model='concessionaire')
+            .form-send
+              button(type='submit') ENVIAR
+            .form-annotation
+              p.note-cite *Campos obligatorios
+              p
+                | Yo, manifiesto que acepto y autorizo por medio de la presente al concesionario y a su matriz, filiales, subsidiarias, controladas, y vinculadas, para que almacenen (en servidores dentro y fuera del país), empleen, utilicen y verifiquen datos personales suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes financieros para la adquisición de productos, respetando la privacidad y confidencialidad establecida por las leyes Colombianas, como la ley 1266 de 2008 y la 1581 de 2012, su reglamentación y demás normas que las modifiquen. Certifico que la información suministrada es clara, suficiente y veraz.
+              p
+                | Más información sobre nuestra Política de Privacidad en el siguiente link
+                a(href='') Política de Privacidad de la información
+        footer#FOOTER
+          |  ™ + © 2019 Todos los derechos reservados.
+    script(src='./js/scripts.js')
+  

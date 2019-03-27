@@ -1,0 +1,31 @@
+@import 'nib'
+
+//GENERAL
+.mdi
+    font-size 24px
+    display inline-block
+
+// CONTENT
+html
+    background $bgColor
+
+html, body
+    margin 0
+    padding 0
+    font-family $textFont
+    color $textColor
+    font-size $text_p
+
+.wrapper
+    padding 0
+    margin auto
+    display flex
+    width $wrapper
+    box-sizing border-box
+    position absolute
+    left 0
+    top 0
+    right 0
+    bottom 0
+    @media (max-width $screen-sm)
+        flex-direction column
