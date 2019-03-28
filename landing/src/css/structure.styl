@@ -19,13 +19,123 @@ html, body
 .wrapper
     padding 0
     margin auto
-    display flex
-    width $wrapper
+    max-width $wrapper
+    @media(max-width:$screen-sm)
+        max-width 90%
+
+input
+select
+    border 1px solid $gray5
+    background-color $gray6
+    border-radius $rad
+    min-width 200px
+    line-height 2em
+    text-indent 0.5em
+    height 32px
     box-sizing border-box
-    position absolute
-    left 0
-    top 0
-    right 0
-    bottom 0
-    @media (max-width $screen-sm)
-        flex-direction column
+    color $textColor
+    &::placeholder 
+        color rgba($textColor, .33)
+        font-style italic
+
+#HEADER
+    .head-icon
+        height auto
+        img
+            height 58px
+            margin 8px
+
+    .head-title
+        background url('../imgs/banner.jpg') center center
+        background-size cover
+        color $white1
+        min-height 565px
+        overflow hidden
+        position relative
+
+        &:before
+            beforeAfter block absolute 100% 100%
+            top 0
+            left 0
+            background linear-gradient(to bottom, rgba(white,0) 0%, rgba(white,0.33) 20%, rgba(white,0%) 40%, rgba(white,0) 100%)
+
+        @media(max-width:$screen-sm)
+            min-height 200px
+    h2
+        font-size $text_h1
+        font-weight bold
+        font-style italic
+        margin-top 10%
+    
+#MAIN
+    text-align center
+
+    h1.main-title
+        text-align center
+        font-weight bold
+        font-style italic
+        font-size $text_h2
+        margin 0 auto
+        padding 2em 0 2em
+
+form#DATA
+    .form-input
+        color $orange3
+        text-align left
+        display inline-block
+        vertical-align middle
+        width 48%
+        padding-bottom 15px
+
+        @media(max-width:$screen-md)
+            width 40%
+
+        @media(max-width:$screen-sm)
+            width 90%
+
+        &:nth-child(even)
+            margin-left 3%
+    label 
+        font-weight bold
+        display block
+        padding 0 0 8px
+    input
+    select
+        width 98%
+    .form-send
+        padding 30px 0px
+
+    .submit
+        background $orange3
+        color $textColor
+        font-weight bold
+        font-size $text_h4
+        font-style italic
+        border 1px solid $orange3
+        padding 6px 20px
+        border-radius $rad
+        display inline-block
+
+    .form-annotation
+        font-size $text_small
+        line-height 1.5em
+        text-align justify
+
+        p, a
+            color $orange3
+
+        a
+            margin 0 0.5em
+            font-weight bold
+        
+        p.note-cite
+            color $textColor
+
+footer#FOOTER
+    border-top 2px solid $orange3
+    margin 40px 0 0
+    display block
+    box-sizing border-box
+    padding 20px
+    text-align center
+    font-style italic

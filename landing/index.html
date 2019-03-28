@@ -13,61 +13,69 @@
   </head>
   <body>
     <div class="app" id="app" v-bind:class="{&quot;is-sending&quot;:isSending, &quot;validate-status&quot;:validateStatus}">
-      <div class="warpper">
-        <header id="HEADER">
-          <div class="head-icon"><img src="./imgs/back-to-the-future.png" alt=""/></div>
-          <div class="head-title">
+      <header id="HEADER">
+        <div class="head-icon">
+          <div class="wrapper"><a href="#"><img src="./imgs/back-to-the-future.png" alt=""/></a></div>
+        </div>
+        <div class="head-title">
+          <div class="wrapper">
             <h2>UN AUTO ÚNICO COMO TÚ</h2>
           </div>
-        </header>
-        <main id="MAIN">
+        </div>
+      </header>
+      <main id="MAIN">
+        <div class="wrapper">
           <h1 class="main-title">AGENDA TU PRUEBA DE MANEJO Y DESCUBRE CÓMO<br/>UN HÉROE SE VE COMO UN HÉROE</h1>
           <form id="DATA" action="/" v-on:submit="send">
             <div class="form-input">
               <label for="">Nombre*</label>
-              <input type="text" v-model="name"/>
+              <input type="text" placeholder="Ingresa tu nombre" v-model="name"/>
             </div>
             <div class="form-input">
               <label for="">Apellido*</label>
-              <input type="text" v-model="lastName"/>
+              <input type="text" placeholder="Ingresa tus apellidos" v-model="lastName"/>
             </div>
             <div class="form-input">
               <label for="">Cédula*</label>
-              <input type="text" v-model="idNumber"/>
+              <input type="text" placeholder="Ingresa tu No. de cédula" v-model="idNumber"/>
             </div>
             <div class="form-input">
               <label for="">Correo Electrónico*</label>
-              <input type="text" v-model="email"/>
+              <input type="text" placeholder="Ingresa tu correo electrónico" v-model="email"/>
             </div>
             <div class="form-input">
               <label for="">Teléfono*</label>
-              <input type="text" v-model="phone"/>
+              <input type="text" placeholder="Ingresa tu Teléfono" v-model="phone"/>
             </div>
             <div class="form-input">
               <label for="">Modelo*</label>
-              <input type="text" v-model="carModel"/>
+              <select placeholder="Selecciona el modelo" v-model="carModel">
+                <option value="">Selecciona tu modelo</option>
+              </select>
             </div>
             <div class="form-input">
               <label for="">Ciudad*</label>
-              <input type="text" v-model="city"/>
+              <select placeholder="Ingresa tu ciudad" v-model="city">
+                <option value="">Selecciona tu ciudad</option>
+              </select>
             </div>
             <div class="form-input">
               <label for="">Concesionario**</label>
-              <input type="text" v-model="concessionaire"/>
+              <input type="text" placeholder="Ingresa tu concesionario" v-model="concessionaire"/>
             </div>
             <div class="form-send">
-              <button type="submit">ENVIAR</button>
+              <button class="submit" type="submit">ENVIAR</button>
             </div>
             <div class="form-annotation">
               <p class="note-cite">*Campos obligatorios</p>
               <p>Yo, manifiesto que acepto y autorizo por medio de la presente al concesionario y a su matriz, filiales, subsidiarias, controladas, y vinculadas, para que almacenen (en servidores dentro y fuera del país), empleen, utilicen y verifiquen datos personales suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes financieros para la adquisición de productos, respetando la privacidad y confidencialidad establecida por las leyes Colombianas, como la ley 1266 de 2008 y la 1581 de 2012, su reglamentación y demás normas que las modifiquen. Certifico que la información suministrada es clara, suficiente y veraz.</p>
-              <p>Más información sobre nuestra Política de Privacidad en el siguiente link<a href="">Política de Privacidad de la información</a></p>
+              <p>Más información sobre nuestra Política de Privacidad en el siguiente link<a href="#">Política de Privacidad de la información</a></p>
             </div>
           </form>
-        </main>
-        <footer id="FOOTER"> ™ + © 2019 Todos los derechos reservados.</footer>
-      </div>
+        </div>
+      </main>
     </div>
+    <footer id="FOOTER"> ™ + © 2019 Todos los derechos reservados.</footer>
     <script src="./js/scripts.js"></script>
   </body>
 </html>

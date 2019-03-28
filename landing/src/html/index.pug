@@ -14,13 +14,16 @@ html
     
   body
     #app.app(v-bind:class='{"is-sending":isSending, "validate-status":validateStatus}')
-      .warpper
-        header#HEADER
-          .head-icon
-            img(src='./imgs/back-to-the-future.png', alt='')
-          .head-title
+      header#HEADER
+        .head-icon
+          .wrapper
+            a(href='#')
+              img(src='./imgs/back-to-the-future.png', alt='')
+        .head-title
+          .wrapper
             h2 UN AUTO ÚNICO COMO TÚ
-        main#MAIN
+      main#MAIN
+        .wrapper
           h1.main-title
             | AGENDA TU PRUEBA DE MANEJO Y DESCUBRE CÓMO
             br
@@ -28,38 +31,43 @@ html
           form#DATA(action='/', v-on:submit='send')
             .form-input
               label(for='') Nombre*
-              input(type='text', v-model='name')
+              input(type='text', placeholder='Ingresa tu nombre', v-model='name')
             .form-input
               label(for='') Apellido*
-              input(type='text', v-model='lastName')
+              input(type='text', placeholder='Ingresa tus apellidos', v-model='lastName')
             .form-input
               label(for='') Cédula*
-              input(type='text', v-model='idNumber')
+              input(type='text', placeholder='Ingresa tu No. de cédula', v-model='idNumber')
             .form-input
               label(for='') Correo Electrónico*
-              input(type='text', v-model='email')
+              input(type='text', placeholder='Ingresa tu correo electrónico', v-model='email')
             .form-input
               label(for='') Teléfono*
-              input(type='text', v-model='phone')
+              input(type='text', placeholder='Ingresa tu Teléfono', v-model='phone')
             .form-input
               label(for='') Modelo*
-              input(type='text', v-model='carModel')
+              select( placeholder='Selecciona el modelo', v-model='carModel')
+                option(value="") Selecciona tu modelo
             .form-input
               label(for='') Ciudad*
-              input(type='text', v-model='city')
+              select( placeholder='Ingresa tu ciudad', v-model='city')
+                option(value="") Selecciona tu ciudad
             .form-input
               label(for='') Concesionario**
-              input(type='text', v-model='concessionaire')
+              input(type='text', placeholder='Ingresa tu concesionario', v-model='concessionaire')
             .form-send
-              button(type='submit') ENVIAR
+              button.submit(type='submit') ENVIAR
+
             .form-annotation
               p.note-cite *Campos obligatorios
               p
                 | Yo, manifiesto que acepto y autorizo por medio de la presente al concesionario y a su matriz, filiales, subsidiarias, controladas, y vinculadas, para que almacenen (en servidores dentro y fuera del país), empleen, utilicen y verifiquen datos personales suministrados voluntariamente. Esta autorización comprende uso de datos personales para fines estadísticos, comerciales, informativos, seguimiento al producto, mercadeo, notificación y contacto al cliente para campaña de seguridad, satisfacción, mercadeo relacional y/o similares, así como el ofrecimiento de planes financieros para la adquisición de productos, respetando la privacidad y confidencialidad establecida por las leyes Colombianas, como la ley 1266 de 2008 y la 1581 de 2012, su reglamentación y demás normas que las modifiquen. Certifico que la información suministrada es clara, suficiente y veraz.
               p
                 | Más información sobre nuestra Política de Privacidad en el siguiente link
-                a(href='') Política de Privacidad de la información
-        footer#FOOTER
-          |  ™ + © 2019 Todos los derechos reservados.
+                a(href='#') Política de Privacidad de la información
+
+    footer#FOOTER
+      |  ™ + © 2019 Todos los derechos reservados.
+
     script(src='./js/scripts.js')
   

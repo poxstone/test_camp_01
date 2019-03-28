@@ -10,7 +10,7 @@
 
 - html render from pug
     ```bash
-    pug -w -P -o ./html/ ./src/html/index.pug;
+    pug -w -P -o ./ ./src/html/index.pug;
     ```
 - css render from stylus
     ```bash
