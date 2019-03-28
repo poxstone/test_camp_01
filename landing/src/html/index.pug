@@ -3,9 +3,9 @@ html
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    title Landing page
+    title Landing Page - Mazda
     
-    link(rel='icon', type='image/svg+xml', href='./img/favicon.svg', sizes='any')
+    link(rel='icon', href='./imgs/favicon.ico')
     link(href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css', rel='stylesheet')
     link(href='https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css', rel='stylesheet')
     link(rel='stylesheet', href='./css/style.css')
@@ -31,30 +31,36 @@ html
           form#DATA(action='/', v-on:submit='send')
             .form-input
               label(for='') Nombre*
-              input(type='text', placeholder='Ingresa tu nombre', v-model='name')
+              input(type='text', placeholder='Ingresa tu nombre', v-model='name', required="required", pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}")
             .form-input
               label(for='') Apellido*
-              input(type='text', placeholder='Ingresa tus apellidos', v-model='lastName')
+              input(type='text', placeholder='Ingresa tus apellidos', v-model='lastName', required="required", pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}")
             .form-input
               label(for='') Cédula*
-              input(type='text', placeholder='Ingresa tu No. de cédula', v-model='idNumber')
+              input(type='number', placeholder='Ingresa tu No. de cédula', v-model='idNumber', required="required", min="1000000", max="999999999999", pattern="[0-9]{8,20}")
             .form-input
               label(for='') Correo Electrónico*
-              input(type='text', placeholder='Ingresa tu correo electrónico', v-model='email')
+              input(type='email', placeholder='Ingresa tu correo electrónico', v-model='email', required="required")
             .form-input
               label(for='') Teléfono*
-              input(type='text', placeholder='Ingresa tu Teléfono', v-model='phone')
+              input(type='text', placeholder='Ingresa tu Teléfono', v-model='phone', required="required", pattern="[+()0-9 ]{6,20}")
             .form-input
               label(for='') Modelo*
-              select( placeholder='Selecciona el modelo', v-model='carModel')
+              select( placeholder='Selecciona el modelo', v-model='carModel', required="required", pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}")
                 option(value="") Selecciona tu modelo
+                option(value="cx-3") CX-3
+                option(value="cx-5") CX-5
+                option(value="cx-7") CX-7
             .form-input
               label(for='') Ciudad*
-              select( placeholder='Ingresa tu ciudad', v-model='city')
+              select( placeholder='Ingresa tu ciudad', v-model='city', required="required", pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}")
                 option(value="") Selecciona tu ciudad
+                option(value="Bogotá") Bogotá
+                option(value="Medellín") Medellín
+                option(value="Bucaramanga") Bucaramanga
             .form-input
               label(for='') Concesionario**
-              input(type='text', placeholder='Ingresa tu concesionario', v-model='concessionaire')
+              input(type='text', placeholder='Ingresa tu concesionario', v-model='concessionaire', required="required", pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ#() .-]{2,}")
             .form-send
               button.submit(type='submit') ENVIAR
 
@@ -66,8 +72,8 @@ html
                 | Más información sobre nuestra Política de Privacidad en el siguiente link
                 a(href='#') Política de Privacidad de la información
 
-    footer#FOOTER
-      |  ™ + © 2019 Todos los derechos reservados.
+      footer#FOOTER
+        |  ™ + © 2019 Todos los derechos reservados.
 
     script(src='./js/scripts.js')
   

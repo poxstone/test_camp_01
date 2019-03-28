@@ -4,8 +4,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Landing page</title>
-    <link rel="icon" type="image/svg+xml" href="./img/favicon.svg" sizes="any"/>
+    <title>Landing Page - Mazda</title>
+    <link rel="icon" href="./imgs/favicon.ico"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"/>
     <link href="https://cdn.materialdesignicons.com/3.0.39/css/materialdesignicons.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./css/style.css"/>
@@ -29,39 +29,45 @@
           <form id="DATA" action="/" v-on:submit="send">
             <div class="form-input">
               <label for="">Nombre*</label>
-              <input type="text" placeholder="Ingresa tu nombre" v-model="name"/>
+              <input type="text" placeholder="Ingresa tu nombre" v-model="name" required="required" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}"/>
             </div>
             <div class="form-input">
               <label for="">Apellido*</label>
-              <input type="text" placeholder="Ingresa tus apellidos" v-model="lastName"/>
+              <input type="text" placeholder="Ingresa tus apellidos" v-model="lastName" required="required" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}"/>
             </div>
             <div class="form-input">
               <label for="">Cédula*</label>
-              <input type="text" placeholder="Ingresa tu No. de cédula" v-model="idNumber"/>
+              <input type="number" placeholder="Ingresa tu No. de cédula" v-model="idNumber" required="required" min="1000000" max="999999999999" pattern="[0-9]{8,20}"/>
             </div>
             <div class="form-input">
               <label for="">Correo Electrónico*</label>
-              <input type="text" placeholder="Ingresa tu correo electrónico" v-model="email"/>
+              <input type="email" placeholder="Ingresa tu correo electrónico" v-model="email" required="required"/>
             </div>
             <div class="form-input">
               <label for="">Teléfono*</label>
-              <input type="text" placeholder="Ingresa tu Teléfono" v-model="phone"/>
+              <input type="text" placeholder="Ingresa tu Teléfono" v-model="phone" required="required" pattern="[+()0-9 ]{6,20}"/>
             </div>
             <div class="form-input">
               <label for="">Modelo*</label>
-              <select placeholder="Selecciona el modelo" v-model="carModel">
+              <select placeholder="Selecciona el modelo" v-model="carModel" required="required" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}">
                 <option value="">Selecciona tu modelo</option>
+                <option value="cx-3">CX-3</option>
+                <option value="cx-5">CX-5</option>
+                <option value="cx-7">CX-7</option>
               </select>
             </div>
             <div class="form-input">
               <label for="">Ciudad*</label>
-              <select placeholder="Ingresa tu ciudad" v-model="city">
+              <select placeholder="Ingresa tu ciudad" v-model="city" required="required" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ ]{2,}">
                 <option value="">Selecciona tu ciudad</option>
+                <option value="Bogotá">Bogotá</option>
+                <option value="Medellín">Medellín</option>
+                <option value="Bucaramanga">Bucaramanga</option>
               </select>
             </div>
             <div class="form-input">
               <label for="">Concesionario**</label>
-              <input type="text" placeholder="Ingresa tu concesionario" v-model="concessionaire"/>
+              <input type="text" placeholder="Ingresa tu concesionario" v-model="concessionaire" required="required" pattern="[a-zA-ZáéíóúÁÉÍÓÚÑÑ#() .-]{2,}"/>
             </div>
             <div class="form-send">
               <button class="submit" type="submit">ENVIAR</button>
@@ -74,8 +80,8 @@
           </form>
         </div>
       </main>
+      <footer id="FOOTER"> ™ + © 2019 Todos los derechos reservados.</footer>
     </div>
-    <footer id="FOOTER"> ™ + © 2019 Todos los derechos reservados.</footer>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
